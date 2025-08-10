@@ -3,32 +3,6 @@ revision = 1
 requires-python = ">=3.10"
 
 [[package]]
-name = "annotate-ontology"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "langchain-ollama" },
-    { name = "langgraph" },
-    { name = "rdflib" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "pytest" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "langchain-ollama" },
-    { name = "langchain-ollama", specifier = ">=0.0.1" },
-    { name = "langgraph", specifier = ">=0.0.1" },
-    { name = "rdflib", specifier = ">=7.0.0" },
-]
-
-[package.metadata.requires-dev]
-dev = [{ name = "pytest", specifier = ">=7.4.0" }]
-
-[[package]]
 name = "annotated-types"
 version = "0.7.0"
 source = { registry = "https://pypi.org/simple" }
@@ -392,6 +366,32 @@ sdist = { url = "https://files.pythonhosted.org/packages/be/7a/a4265a1ae549cb248
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b2/04/171205d95baa3e5e8867416ffeb90510c3f17036a96e6aa9948ba4920db0/langsmith-0.4.13-py3-none-any.whl", hash = "sha256:dab7b16ee16986995007bf5a777f45c18f8bf7453f67ae2ebcb46ce43c214297", size = 372682 },
 ]
+
+[[package]]
+name = "localize-ontology"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "langchain-ollama" },
+    { name = "langgraph" },
+    { name = "rdflib" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "pytest" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "langchain-ollama" },
+    { name = "langchain-ollama", specifier = ">=0.0.1" },
+    { name = "langgraph", specifier = ">=0.0.1" },
+    { name = "rdflib", specifier = ">=7.0.0" },
+]
+
+[package.metadata.requires-dev]
+dev = [{ name = "pytest", specifier = ">=7.4.0" }]
 
 [[package]]
 name = "ollama"

@@ -1,5 +1,5 @@
 [project]
-name = "annotate-ontology"
+name = "localize-ontology"
 version = "0.1.0"
 description = "Add missing skos:prefLabel / skos:definition in a target language."
 requires-python = ">=3.10"

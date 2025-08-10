@@ -1,13 +1,63 @@
-# Annotate‑Ontology
+# localize‑Ontology
 
 The *Annotate‑Ontology* agent enriches an existing RDF graph (`ontology`) by adding
 language‑specific annotations (e.g. labels, comments, descriptions).  
 The agent keeps a record of all triples that have been added so that it can
 audit, debug or undo changes if necessary.
 
-## config.json
 
-Before running the code, copy the config.json_example file to a new file called config.json. Change the values to match your situtation. The example assumes you are running ollama locally and have granite3.3.
+
+
+## Command‑Line Usage
+
+The `annotate_ontology.py` script can be executed directly from the terminal.  
+It takes three positional arguments:
+
+1. **`ontology_file`** – Path to the input ontology (any RDF format that `rdflib` can parse, e.g. `.ttl`, `.rdf`, `.xml`, `.jsonld`).
+2. **`output_file`** – Desired path for the enriched ontology (will be written in Turtle format).
+3. **`--lang` / `-l`** – (Optional) Target language code (default is `fr`).
+
+```bash
+# Basic usage (French by default)
+python src/localize_ontology/annotate_ontology.py \
+  path/to/input_ontology.ttl \
+  path/to/enriched_output.ttl
+
+# Specify a different language (e.g. Spanish)
+python src/localize_ontology/annotate_ontology.py \
+  path/to/input_ontology.ttl \
+  path/to/enriched_output.ttl \
+  -l es
+
+# Show help
+python src/localize_ontology/annotate_ontology.py -h
+```
+
+### Prerequisites
+
+1. **Python 3.9+** (recommended to use a virtual environment).
+2. Install the required dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **LLM Configuration** –  
+   The script reads a `config.json` file to determine the LLM model and base URL.  
+   Copy `config.json_example` to `config.json` and edit the fields as needed.
+
+### Example
+
+```bash
+python src/localize_ontology/annotate_ontology.py \
+  data/dcterms.ttl \
+  data/dcterms-nl.ttl \
+  -l nl
+
+```  
+After execution, data/animals_enriched.ttl will contain the original triples plus any new skos:prefLabel or skos:definition triples that were generated in German. The console will also display a count of how many new triples were added.
+
+Happy enriching!
 
 ## Key Data Structure
 
@@ -26,7 +76,7 @@ class OntState:
 * **`added_triples`** – A list that the agent appends to whenever it adds a
   triple. Each entry is a `(subject, predicate, object)` tuple.
 
-## Typical Usage
+## Typical Usage in python
 
 ```python
 from rdflib import Graph
