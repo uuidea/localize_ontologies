@@ -1,0 +1,24 @@
+[project]
+name = "annotate-ontology"
+version = "0.1.0"
+description = "Add missing skos:prefLabel / skos:definition in a target language."
+requires-python = ">=3.10"
+dependencies = [
+    # RDF handling
+    "rdflib>=7.0.0",
+    # Langgraph for workflow orchestration
+    "langgraph>=0.0.1",
+    # LLM wrapper for Ollama
+    "langchain-ollama>=0.0.1",
+    "langchain_ollama"
+]
+
+[build-system]
+requires = ["setuptools>=68.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv]
+# Optional: add any uv‑specific configuration or dev dependencies
+dev-dependencies = [
+    "pytest>=7.4.0",
+]

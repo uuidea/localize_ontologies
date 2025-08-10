@@ -1,0 +1,4 @@
+{
+    "model": "granite3.3:latest",
+    "base_url": "http://localhost:11434"
+}
