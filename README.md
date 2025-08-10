@@ -5,6 +5,10 @@ language‑specific annotations (e.g. labels, comments, descriptions).
 The agent keeps a record of all triples that have been added so that it can
 audit, debug or undo changes if necessary.
 
+## config.json
+
+Before running the code, copy the config.json_example file to a new file called config.json. Change the values to match your situtation. The example assumes you are running ollama locally and have granite3.3.
+
 ## Key Data Structure
 
 ```python
