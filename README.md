@@ -41,7 +41,7 @@ Copy `config.json_example` to `config.json` and edit the fields as needed.
 ```bash
 python src/localize_ontology/annotate_ontology.py \
   data/dcterms.ttl \
-  data/animals_enriched.ttl \
+  data/dcterms-nl.ttl \
   -l de
 
 ```  
